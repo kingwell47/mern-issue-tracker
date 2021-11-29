@@ -1,7 +1,11 @@
+import Navbar from "./components/Navbar";
+import Projects from "./components/Projects";
+
 function App() {
   return (
-    <div className="App">
-      <h1>Hello World!</h1>
+    <div className="container mx-auto">
+      <Navbar />
+      <Projects />
     </div>
   );
 }
