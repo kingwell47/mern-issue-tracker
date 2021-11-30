@@ -1,11 +1,14 @@
 import React from "react";
-import Project from "./Project";
+import ProjectCard from "./ProjectCard";
+import { Link } from "react-router-dom";
 
 const Projects = ({ data }) => {
   return (
-    <div className="flex flex-col p-3 pt-20 gap-3">
+    <div className="flex flex-col px-3 pt-20 gap-3">
       {data.map((item, index) => (
-        <Project info={item} key={index} />
+        <Link to={`/projects/${item._id}`} key={index}>
+          <ProjectCard info={item} />
+        </Link>
       ))}
     </div>
   );

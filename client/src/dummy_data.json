@@ -1,5 +1,6 @@
 [
   {
+    "_id": 1,
     "project": "Sample Project #1",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi iste nam nihil assumenda laudantium exercitationem inventore expedita autem ullam quas!",
     "issues": [
@@ -36,6 +37,7 @@
     ]
   },
   {
+    "_id": 2,
     "project": "Sample Project #2",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi iste nam nihil assumenda laudantium exercitationem inventore expedita autem ullam quas!",
     "issues": [
@@ -72,6 +74,7 @@
     ]
   },
   {
+    "_id": 3,
     "project": "Sample Project #3",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi iste nam nihil assumenda laudantium exercitationem inventore expedita autem ullam quas!",
     "issues": [

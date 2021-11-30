@@ -1,19 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import DUMMY_DATA from "../dummy_data.json";
 
-const Project = ({ info }) => {
-  const { project, description, issues } = info;
-  const pending = issues.filter((item) => item.open === true);
+const Project = () => {
+  const { id } = useParams();
+  const [projectData, setProjectData] = useState({
+    project: "",
+    description: "",
+    issues: [],
+  });
+
+  useEffect(() => {
+    let project = DUMMY_DATA.filter((item) => item._id === parseInt(id));
+    setProjectData(project[0]);
+  }, []);
 
   return (
-    <div className="hover:bg-gray-200 rounded-md bg-gray-300 shadow-md p-3 cursor-pointer transition-colors">
-      <h2 className="font-bold text-xl text-center">{project}</h2>
-      <p className="text-center mt-3">{description}</p>
-      <ul className="flex justify-around mt-3">
-        <li className="text-blue-500">Issues: {issues.length}</li>
-        <li className="text-red-500">Pending: {pending.length}</li>
-        <li className="text-green-500">
-          Resolved: {issues.length - pending.length}
-        </li>
+    <div className="pt-20 px-3">
+      <h2 className="text-center font-bold text-xl">{projectData.project}</h2>
+      <p>{projectData.description}</p>
+      <ul>
+        {projectData.issues.map((item, index) => (
+          <li key={index}>
+            <div className="bg-blue-200 mt-2 rounded-md p-2">
+              <h3 className="text-center font-bold">{item.issue_title}</h3>
+              <p>{item.issue_text}</p>
+              <p>Created by: {item.created_by}</p>
+              <p>Assigned to: {item.assigned_to}</p>
+              <p>Open: {item.open.toString()}</p>
+              <p>Status text: {item.status_text}</p>
+              <p>Created on: {item.created_on}</p>
+              <p>Last updated: {item.updated_on}</p>
+            </div>
+          </li>
+        ))}
       </ul>
     </div>
   );
