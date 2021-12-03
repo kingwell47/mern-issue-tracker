@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import CssBaseline from "@mui/material/CssBaseline";
 
 import AppNavbar from "./components/AppNavbar";
 import Projects from "./components/Projects";
@@ -14,6 +15,7 @@ import DUMMY_DATA from "./dummy_data.json";
 function App() {
   return (
     <>
+      <CssBaseline />
       <AppNavbar />
       <Box sx={{ display: "flex", paddingTop: 10, gap: 5 }}>
         <SideBar />
