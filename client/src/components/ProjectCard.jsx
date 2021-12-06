@@ -1,21 +1,51 @@
 import React from "react";
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 
 const ProjectCard = ({ info }) => {
-  const { project, description, issues } = info;
+  const { project, description, issues, _id } = info;
   const pending = issues.filter((item) => item.open === true);
 
   return (
-    <div className="hover:bg-gray-200 rounded-md bg-gray-300 shadow-md p-3 cursor-pointer transition-colors">
-      <h2 className="font-bold text-xl text-center">{project}</h2>
-      <p className="text-center mt-3">{description}</p>
-      <ul className="flex justify-around mt-3">
-        <li className="text-blue-500">Issues: {issues.length}</li>
-        <li className="text-red-500">Pending: {pending.length}</li>
-        <li className="text-green-500">
-          Resolved: {issues.length - pending.length}
-        </li>
-      </ul>
-    </div>
+    <Box sx={{ minWidth: 275 }}>
+      <Card variant="outlined">
+        <CardContent>
+          <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+            {_id}
+          </Typography>
+          <Typography variant="h5" component="div" sx={{ mb: 1.5 }}>
+            {project}
+          </Typography>
+          <Typography variant="body2" gutterBottom>
+            {description}
+          </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-around",
+              mt: 1.5,
+            }}
+          >
+            <Typography color="text.secondary">
+              Issues: {issues.length}
+            </Typography>
+            <Typography color="text.secondary">
+              Pending: {pending.length}
+            </Typography>
+            <Typography color="text.secondary">
+              Resolved: {issues.length - pending.length}
+            </Typography>
+          </Box>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
+    </Box>
   );
 };
 

@@ -13,13 +13,14 @@ function App() {
   return (
     <>
       <CssBaseline />
-      <Routes>
-        <Route path="/" element={<Projects data={DUMMY_DATA} />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/new-project" element={<NewProject />} />
-        <Route path="/projects/:id" element={<Project />} />
-      </Routes>
+      <Dashboard>
+        <Routes>
+          <Route path="/projects" element={<Projects data={DUMMY_DATA} />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/new-project" element={<NewProject />} />
+          <Route path="/projects/:id" element={<Project />} />
+        </Routes>
+      </Dashboard>
     </>
   );
 }

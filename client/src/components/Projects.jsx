@@ -1,16 +1,16 @@
 import React from "react";
+import Grid from "@mui/material/Grid";
 import ProjectCard from "./ProjectCard";
-import { Link } from "react-router-dom";
 
 const Projects = ({ data }) => {
   return (
-    <div className="flex flex-col px-3 pt-20 gap-3">
+    <>
       {data.map((item, index) => (
-        <Link to={`/projects/${item._id}`} key={index}>
+        <Grid item xs={2} sm={4} md={4} key={index}>
           <ProjectCard info={item} />
-        </Link>
+        </Grid>
       ))}
-    </div>
+    </>
   );
 };
 
