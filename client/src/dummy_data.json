@@ -5,31 +5,37 @@
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi iste nam nihil assumenda laudantium exercitationem inventore expedita autem ullam quas!",
     "issues": [
       {
+        "id": 1,
         "issue_title": "Sample issue title #1",
         "issue_text": "Sample issue text #1",
         "created_by": "Sample",
         "assigned_to": "",
         "open": true,
+        "priority": "low",
         "status_text": "",
         "created_on": "11/30/2021",
         "updated_on": "11/30/2021"
       },
       {
+        "id": 2,
         "issue_title": "Sample issue title #2",
         "issue_text": "Sample issue text #2",
         "created_by": "Sample",
         "assigned_to": "",
         "open": false,
+        "priority": "normal",
         "status_text": "",
         "created_on": "11/30/2021",
         "updated_on": "11/30/2021"
       },
       {
+        "id": 3,
         "issue_title": "Sample issue title #3",
         "issue_text": "Sample issue text #3",
         "created_by": "Sample",
         "assigned_to": "",
         "open": true,
+        "priority": "high",
         "status_text": "",
         "created_on": "11/30/2021",
         "updated_on": "11/30/2021"
@@ -42,31 +48,37 @@
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi iste nam nihil assumenda laudantium exercitationem inventore expedita autem ullam quas!",
     "issues": [
       {
+        "id": 1,
         "issue_title": "Sample issue title #1",
         "issue_text": "Sample issue text #1",
         "created_by": "Sample",
         "assigned_to": "",
         "open": true,
+        "priority": "high",
         "status_text": "",
         "created_on": "11/30/2021",
         "updated_on": "11/30/2021"
       },
       {
+        "id": 2,
         "issue_title": "Sample issue title #2",
         "issue_text": "Sample issue text #2",
         "created_by": "Sample",
         "assigned_to": "",
         "open": false,
+        "priority": "low",
         "status_text": "",
         "created_on": "11/30/2021",
         "updated_on": "11/30/2021"
       },
       {
+        "id": 3,
         "issue_title": "Sample issue title #3",
         "issue_text": "Sample issue text #3",
         "created_by": "Sample",
         "assigned_to": "",
         "open": false,
+        "priority": "normal",
         "status_text": "",
         "created_on": "11/30/2021",
         "updated_on": "11/30/2021"
@@ -79,31 +91,37 @@
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi iste nam nihil assumenda laudantium exercitationem inventore expedita autem ullam quas!",
     "issues": [
       {
+        "id": 1,
         "issue_title": "Sample issue title #1",
         "issue_text": "Sample issue text #1",
         "created_by": "Sample",
         "assigned_to": "",
         "open": false,
+        "priority": "normal",
         "status_text": "",
         "created_on": "11/30/2021",
         "updated_on": "11/30/2021"
       },
       {
+        "id": 2,
         "issue_title": "Sample issue title #2",
         "issue_text": "Sample issue text #2",
         "created_by": "Sample",
         "assigned_to": "",
         "open": false,
+        "priority": "high",
         "status_text": "",
         "created_on": "11/30/2021",
         "updated_on": "11/30/2021"
       },
       {
+        "id": 3,
         "issue_title": "Sample issue title #3",
         "issue_text": "Sample issue text #3",
         "created_by": "Sample",
         "assigned_to": "",
         "open": false,
+        "priority": "low",
         "status_text": "",
         "created_on": "11/30/2021",
         "updated_on": "11/30/2021"

@@ -23,34 +23,49 @@ const Project = () => {
   const columns = [
     { field: "id", headerName: "ID", width: 90 },
     {
-      field: "firstName",
-      headerName: "First name",
+      field: "issue_title",
+      headerName: "Issue",
+      width: 250,
+      editable: true,
+    },
+    {
+      field: "created_by",
+      headerName: "Created by",
       width: 150,
       editable: true,
     },
     {
-      field: "lastName",
-      headerName: "Last name",
+      field: "assigned_to",
+      headerName: "Assigned to",
       width: 150,
       editable: true,
     },
     {
-      field: "age",
-      headerName: "Age",
-      type: "number",
-      width: 110,
+      field: "created_on",
+      headerName: "Created on",
+      width: 150,
       editable: true,
     },
     {
-      field: "fullName",
-      headerName: "Full name",
-      description: "This column has a value getter and is not sortable.",
-      sortable: false,
-      width: 160,
+      field: "updated_on",
+      headerName: "Last update",
+      width: 150,
+      editable: true,
+    },
+    {
+      field: "status",
+      headerName: "Status",
+      type: Boolean,
+      width: 150,
+      editable: true,
       valueGetter: (params) =>
-        `${params.getValue(params.id, "firstName") || ""} ${
-          params.getValue(params.id, "lastName") || ""
-        }`,
+        params.getValue(params.id, "open") ? "open" : "closed",
+    },
+    {
+      field: "priority",
+      headerName: "Priority",
+      width: 150,
+      editable: true,
     },
   ];
 
@@ -67,12 +82,13 @@ const Project = () => {
   ];
 
   return (
-    <Box sx={{ height: "50rem", width: "100%" }}>
-      <Typography>{projectData.project}</Typography>
+    <Box sx={{ height: "45rem", width: "100%", pt: 2 }}>
+      <Typography variant="h5" mb={2}>
+        {projectData.project}
+      </Typography>
       <Typography>{projectData.description}</Typography>
-      <Divider sx={{ mb: 4, mt: 3 }} />
       <DataGrid
-        rows={rows}
+        rows={projectData.issues}
         columns={columns}
         pageSize={15}
         rowsPerPageOptions={[5]}
