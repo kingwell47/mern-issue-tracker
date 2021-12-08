@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { DataGrid } from "@mui/x-data-grid";
 import Box from "@mui/material/Box";
+import Divider from "@mui/material/Divider";
+import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 
 import DUMMY_DATA from "../dummy_data.json";
@@ -14,6 +16,8 @@ const Project = () => {
     issues: [],
   });
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     let project = DUMMY_DATA.filter((item) => item._id === parseInt(id));
     setProjectData(project[0]);
@@ -25,64 +29,84 @@ const Project = () => {
       field: "issue_title",
       headerName: "Issue",
       width: 250,
-      editable: true,
     },
     {
       field: "created_by",
       headerName: "Created by",
       width: 150,
-      editable: true,
     },
     {
       field: "assigned_to",
       headerName: "Assigned to",
       width: 150,
-      editable: true,
     },
     {
       field: "created_on",
       headerName: "Created on",
       width: 150,
-      editable: true,
     },
     {
       field: "updated_on",
       headerName: "Last update",
       width: 150,
-      editable: true,
     },
     {
       field: "status",
       headerName: "Status",
       type: Boolean,
       width: 150,
-      editable: true,
-      valueGetter: (params) =>
-        params.getValue(params.id, "open") ? "open" : "closed",
+      valueGetter: (params) => (params.row.open ? "open" : "closed"),
     },
     {
       field: "priority",
       headerName: "Priority",
       width: 150,
-      editable: true,
     },
   ];
 
+  const handleClick = (e) => {
+    console.log(e.row.id);
+  };
+
   return (
-    <Box sx={{ height: "45rem", width: "100%", pt: 2 }}>
-      <Typography variant="h5" mb={2}>
-        {projectData.project}
-      </Typography>
-      <Typography>{projectData.description}</Typography>
-      <DataGrid
-        rows={projectData.issues}
-        columns={columns}
-        pageSize={15}
-        rowsPerPageOptions={[5]}
-        checkboxSelection
-        disableSelectionOnClick
-      />
-    </Box>
+    <Paper sx={{ height: "100%", width: "100%" }}>
+      <Box
+        sx={{
+          height: "45rem",
+          width: "100%",
+          pt: 2,
+          display: "flex",
+          flexDirection: "Column",
+        }}
+      >
+        <Typography variant="h5" mb={2} pl={2}>
+          {projectData.project}
+        </Typography>
+        <Typography pl={2} gutterBottom>
+          {projectData.description}
+        </Typography>
+        <Divider />
+        <Box
+          sx={{
+            height: "100%",
+            width: "100%",
+            "& .data-row": { cursor: "pointer" },
+          }}
+        >
+          <DataGrid
+            rows={projectData.issues}
+            columns={columns}
+            pageSize={10}
+            rowsPerPageOptions={[10]}
+            checkboxSelection
+            disableSelectionOnClick
+            onRowClick={(e) => navigate(`./${e.row.id}`)}
+            sx={{ border: "none" }}
+            getRowClassName={() => "data-row"}
+          />
+        </Box>
+      </Box>
+    </Paper>
   );
 };
 

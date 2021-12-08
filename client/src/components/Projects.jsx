@@ -1,5 +1,6 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
 import ProjectCard from "./ProjectCard";
 
 const Projects = ({ data }) => {
@@ -11,7 +12,9 @@ const Projects = ({ data }) => {
     >
       {data.map((item, index) => (
         <Grid item xs={2} sm={4} md={4} key={index}>
-          <ProjectCard info={item} />
+          <Paper>
+            <ProjectCard info={item} />
+          </Paper>
         </Grid>
       ))}
     </Grid>

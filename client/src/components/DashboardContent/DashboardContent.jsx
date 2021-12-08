@@ -19,7 +19,7 @@ const DashboardContent = () => {
             p: 2,
             display: "flex",
             flexDirection: "column",
-            height: 400,
+            height: 350,
           }}
         >
           <Chart />
@@ -31,7 +31,7 @@ const DashboardContent = () => {
             p: 2,
             display: "flex",
             flexDirection: "column",
-            height: 400,
+            height: 350,
           }}
         >
           <TotalIssues />
@@ -40,6 +40,7 @@ const DashboardContent = () => {
       <Grid item xs={12} md={12} lg={12}>
         <Paper
           sx={{
+            p: 2,
             display: "flex",
             flexDirection: "column",
             height: 400,

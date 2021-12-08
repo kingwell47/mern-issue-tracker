@@ -1,5 +1,4 @@
 import React from "react";
-import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 
 import {
@@ -13,6 +12,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import Title from "./Title";
 
 const data = [
   {
@@ -66,7 +66,7 @@ function preventDefault(event) {
 const TotalIssues = () => {
   return (
     <>
-      <Typography>Some Info</Typography>
+      <Title>Some Info</Title>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           width={500}

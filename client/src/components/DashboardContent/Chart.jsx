@@ -2,6 +2,7 @@ import React from "react";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from "recharts";
+import Title from "./Title";
 
 const data01 = [
   { name: "Group A", value: 400 },
@@ -26,7 +27,7 @@ const data02 = [
 const Chart = () => {
   return (
     <>
-      <Typography>Some chart</Typography>
+      <Title>Some chart</Title>
       <ResponsiveContainer width="100%" height="100%">
         <PieChart width={400} height={400}>
           <Pie

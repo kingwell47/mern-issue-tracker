@@ -1,6 +1,6 @@
 import React from "react";
 import { DataGrid } from "@mui/x-data-grid";
-import Typography from "@mui/material/Typography";
+import Title from "./Title";
 
 const columns = [
   { field: "id", headerName: "ID", width: 90 },
@@ -51,7 +51,7 @@ const rows = [
 const RecentsTable = () => {
   return (
     <>
-      <Typography sx={{ p: 2 }}>Recent Issues</Typography>
+      <Title>Recent Issues</Title>
       <div style={{ height: 400, width: "100%" }}>
         <DataGrid
           rows={rows}
@@ -60,6 +60,7 @@ const RecentsTable = () => {
           rowsPerPageOptions={[4]}
           checkboxSelection
           disableSelectionOnClick
+          sx={{ border: "none" }}
         />
       </div>
     </>
