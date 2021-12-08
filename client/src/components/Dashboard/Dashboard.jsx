@@ -127,7 +127,7 @@ function DashboardContent({ children }) {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Dashboard
+              Bug Tracker
             </Typography>
             <IconButton color="inherit">
               <Badge badgeContent={4} color="secondary">
@@ -157,7 +157,7 @@ function DashboardContent({ children }) {
               </ListItemIcon>
               <ListItemText primary="Dashboard" />
             </ListItem>
-            <ListItem button>
+            <ListItem button onClick={() => navigate("/projects")}>
               <ListItemIcon>
                 <ShoppingCartIcon />
               </ListItemIcon>
@@ -197,13 +197,7 @@ function DashboardContent({ children }) {
         >
           <Toolbar />
           <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
-            <Grid
-              container
-              spacing={{ xs: 2, md: 3 }}
-              columns={{ xs: 4, sm: 8, md: 12 }}
-            >
-              {children}
-            </Grid>
+            {children}
             <Copyright sx={{ pt: 4 }} />
           </Container>
         </Box>

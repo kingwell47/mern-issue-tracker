@@ -8,6 +8,7 @@ import Login from "./components/Login";
 
 import DUMMY_DATA from "./dummy_data.json";
 import Dashboard from "./components/Dashboard/Dashboard";
+import DashboardContent from "./components/DashboardContent";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       <CssBaseline />
       <Dashboard>
         <Routes>
-          <Route path="/" element={<Projects data={DUMMY_DATA} />} />
+          <Route path="/" element={<DashboardContent />} />
+          <Route path="/projects" element={<Projects data={DUMMY_DATA} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/new-project" element={<NewProject />} />
           <Route path="/projects/:id" element={<Project />} />
