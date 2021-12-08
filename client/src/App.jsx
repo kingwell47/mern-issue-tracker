@@ -15,7 +15,7 @@ function App() {
       <CssBaseline />
       <Dashboard>
         <Routes>
-          <Route path="/projects" element={<Projects data={DUMMY_DATA} />} />
+          <Route path="/" element={<Projects data={DUMMY_DATA} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/new-project" element={<NewProject />} />
           <Route path="/projects/:id" element={<Project />} />
