@@ -1,6 +1,8 @@
 import React from "react";
+import Paper from "@mui/material/Paper";
 
 import { DataGrid } from "@mui/x-data-grid";
+import Title from "./components/Title";
 
 const columns = [
   { field: "id", headerName: "ID", width: 70 },
@@ -23,31 +25,73 @@ const columns = [
         params.getValue(params.id, "lastName") || ""
       }`,
   },
+  { field: "role", headerName: "Role", width: 130 },
+  { field: "issueCreated", headerName: "Created", type: "number", width: 130 },
+  {
+    field: "issueAssigned",
+    headerName: "Assigned",
+    type: "number",
+    width: 130,
+  },
 ];
 
 const rows = [
-  { id: 1, lastName: "Snow", firstName: "Jon", age: 35 },
-  { id: 2, lastName: "Lannister", firstName: "Cersei", age: 42 },
-  { id: 3, lastName: "Lannister", firstName: "Jaime", age: 45 },
-  { id: 4, lastName: "Stark", firstName: "Arya", age: 16 },
-  { id: 5, lastName: "Targaryen", firstName: "Daenerys", age: null },
-  { id: 6, lastName: "Melisandre", firstName: null, age: 150 },
-  { id: 7, lastName: "Clifford", firstName: "Ferrara", age: 44 },
-  { id: 8, lastName: "Frances", firstName: "Rossini", age: 36 },
-  { id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
+  { id: 1, lastName: "Snow", firstName: "Jon", age: 35, role: "Bastard" },
+  { id: 2, lastName: "Lannister", firstName: "Cersei", age: 42, role: "Queen" },
+  {
+    id: 3,
+    lastName: "Lannister",
+    firstName: "Jaime",
+    age: 45,
+    role: "Kingsguard",
+  },
+  { id: 4, lastName: "Stark", firstName: "Arya", age: 16, role: "Child" },
+  {
+    id: 5,
+    lastName: "Targaryen",
+    firstName: "Daenerys",
+    age: null,
+    role: "Exile",
+  },
+  { id: 6, lastName: "Melisandre", firstName: null, age: 150, role: "Priest" },
+  {
+    id: 7,
+    lastName: "Clifford",
+    firstName: "Ferrara",
+    age: 44,
+    role: "Some person",
+  },
+  {
+    id: 8,
+    lastName: "Frances",
+    firstName: "Rossini",
+    age: 36,
+    role: "Some person",
+  },
+  {
+    id: 9,
+    lastName: "Roxie",
+    firstName: "Harvey",
+    age: 65,
+    role: "Some person",
+  },
 ];
 
 const Users = () => {
   return (
-    <div style={{ height: 400, width: "100%" }}>
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        pageSize={5}
-        rowsPerPageOptions={[5]}
-        checkboxSelection
-      />
-    </div>
+    <>
+      <Title>Users</Title>
+
+      <Paper style={{ height: "45rem", width: "100%" }}>
+        <DataGrid
+          rows={rows}
+          columns={columns}
+          pageSize={15}
+          rowsPerPageOptions={[15]}
+          checkboxSelection
+        />
+      </Paper>
+    </>
   );
 };
 

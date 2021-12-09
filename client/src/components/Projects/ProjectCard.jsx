@@ -1,4 +1,6 @@
 import React from "react";
+import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
+
 import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
@@ -12,40 +14,48 @@ const ProjectCard = ({ info }) => {
 
   const navigate = useNavigate();
 
+  let chartData = [
+    { name: "Pending", value: pending.length },
+    { name: "Resolved", value: issues.length - pending.length },
+  ];
+
   return (
     <Box sx={{ minWidth: 275 }}>
       <Card variant="outlined">
         <CardActionArea onClick={() => navigate(`/projects/${_id}`)}>
           <CardContent>
-            <Typography
-              sx={{ fontSize: 14 }}
-              color="text.secondary"
-              gutterBottom
-            >
-              {_id}
-            </Typography>
             <Typography variant="h5" component="div" sx={{ mb: 1.5 }}>
               {project}
             </Typography>
             <Typography variant="body2" gutterBottom>
               {description}
             </Typography>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "space-around",
-                mt: 1.5,
-              }}
-            >
-              <Typography color="text.secondary">
+
+            <Box height={300}>
+              <Typography color="text.secondary" gutterBottom>
                 Issues: {issues.length}
               </Typography>
-              <Typography color="text.secondary">
-                Pending: {pending.length}
-              </Typography>
-              <Typography color="text.secondary">
-                Resolved: {issues.length - pending.length}
-              </Typography>
+              <ResponsiveContainer width="100%" height="100%">
+                <PieChart width={400} height={400}>
+                  <Pie
+                    dataKey="value"
+                    isAnimationActive={false}
+                    data={chartData}
+                    cx="50%"
+                    cy="50%"
+                    outerRadius={80}
+                    fill="#8884d8"
+                    label
+                  >
+                    {chartData.map((entry) => (
+                      <Cell
+                        fill={entry.name === "Pending" ? "#F07470" : "#82ca9d"}
+                      />
+                    ))}
+                  </Pie>
+                  <Tooltip />
+                </PieChart>
+              </ResponsiveContainer>
             </Box>
           </CardContent>
         </CardActionArea>

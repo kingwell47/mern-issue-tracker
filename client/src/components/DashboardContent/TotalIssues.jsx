@@ -4,7 +4,6 @@ import Link from "@mui/material/Link";
 import {
   BarChart,
   Bar,
-  Cell,
   XAxis,
   YAxis,
   CartesianGrid,
