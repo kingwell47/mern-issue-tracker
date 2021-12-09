@@ -163,23 +163,11 @@ function DashboardContent({ children }) {
               </ListItemIcon>
               <ListItemText primary="Projects" />
             </ListItem>
-            <ListItem button>
+            <ListItem button onClick={() => navigate("/users")}>
               <ListItemIcon>
                 <PeopleIcon />
               </ListItemIcon>
               <ListItemText primary="Users" />
-            </ListItem>
-            <ListItem button>
-              <ListItemIcon>
-                <BarChartIcon />
-              </ListItemIcon>
-              <ListItemText primary="Reports" />
-            </ListItem>
-            <ListItem button>
-              <ListItemIcon>
-                <LayersIcon />
-              </ListItemIcon>
-              <ListItemText primary="Settings" />
             </ListItem>
           </List>
         </Drawer>

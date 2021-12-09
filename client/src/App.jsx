@@ -10,6 +10,7 @@ import DUMMY_DATA from "./dummy_data.json";
 import Dashboard from "./components/Dashboard/Dashboard";
 import DashboardContent from "./components/DashboardContent";
 import Issue from "./components/Issue";
+import Users from "./Users";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<DashboardContent />} />
           <Route path="/projects" element={<Projects data={DUMMY_DATA} />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/users" element={<Users />} />
           <Route path="/new-project" element={<NewProject />} />
           <Route path="/projects/:id" element={<Project />} />
           <Route path="/projects/:id/:issueId" element={<Issue />} />

@@ -64,10 +64,6 @@ const Project = () => {
     },
   ];
 
-  const handleClick = (e) => {
-    console.log(e.row.id);
-  };
-
   return (
     <Paper sx={{ height: "100%", width: "100%" }}>
       <Box
