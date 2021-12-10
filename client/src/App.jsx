@@ -23,8 +23,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/users" element={<Users />} />
           <Route path="/new-project" element={<NewProject />} />
-          <Route path="/projects/:id" element={<Project />} />
-          <Route path="/projects/:id/:issueId" element={<Issue />} />
+          <Route path="/projects/:projectId" element={<Project />} />
+          <Route path="/projects/:projectId/:issueId" element={<Issue />} />
         </Routes>
       </Dashboard>
     </>

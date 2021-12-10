@@ -11,7 +11,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import Title from "./Title";
+import Title from "../Title";
 
 const data = [
   {

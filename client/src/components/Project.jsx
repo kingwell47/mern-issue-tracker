@@ -9,7 +9,7 @@ import Typography from "@mui/material/Typography";
 import DUMMY_DATA from "../dummy_data.json";
 
 const Project = () => {
-  const { id } = useParams();
+  const { projectId } = useParams();
   const [projectData, setProjectData] = useState({
     project: "",
     description: "",
@@ -19,9 +19,9 @@ const Project = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    let project = DUMMY_DATA.filter((item) => item._id === parseInt(id));
+    let project = DUMMY_DATA.filter((item) => item._id === parseInt(projectId));
     setProjectData(project[0]);
-  }, []);
+  }, [projectId]);
 
   const columns = [
     { field: "id", headerName: "ID", width: 90 },

@@ -1,6 +1,6 @@
 import React from "react";
 import { PieChart, Pie, ResponsiveContainer } from "recharts";
-import Title from "./Title";
+import Title from "../Title";
 
 const data01 = [
   { name: "Group A", value: 400 },
