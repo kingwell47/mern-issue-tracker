@@ -29,6 +29,7 @@ const Issue = () => {
   }
 
   const rows = [
+    createData("Project", "Project Name"),
     createData("Created by", "Username"),
     createData("Assigned to", "User assigned"),
     createData("Status", "Open"),
