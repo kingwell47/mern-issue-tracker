@@ -33,6 +33,7 @@ const Issue = () => {
     createData("Created by", "Username"),
     createData("Assigned to", "User assigned"),
     createData("Status", "Open"),
+    createData("Tags", "tags"),
     createData("Priority", "Low"),
     createData("Status info", "Under investigation"),
   ];
