@@ -7,6 +7,7 @@ const issueSchema = new mongoose.Schema(
     created_by: { type: String, required: true },
     assigned_to: String,
     open: { type: Boolean, default: true },
+    priority: String,
     status_text: String,
   },
   {
